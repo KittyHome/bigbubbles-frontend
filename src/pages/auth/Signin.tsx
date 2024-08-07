@@ -7,7 +7,7 @@ import GoogleIcon from '../../assets/icons/google.png';
 
 const Signin: React.FC = () => {
   return (
-    <div className="absolute right-16 top-1/2 z-50 w-full max-w-[400px] -translate-y-1/2 rounded-[32px] bg-primary-background px-10 py-16 backdrop-blur-lg">
+    <div className="absolute right-16 top-1/2 z-50 w-full max-w-[400px] -translate-y-1/2 rounded-[32px] border-1 border-primary-border/30 bg-primary-background/20 px-10 py-16 backdrop-blur">
       <div className="flex flex-col items-center gap-y-8">
         <div className="text-center font-Poppins text-white">
           <p className="text-[40px] leading-[51px]">Welcome to</p>
