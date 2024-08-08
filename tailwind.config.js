@@ -4,9 +4,7 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        primary: {
-          gradient: 'linear-gradient(to right, #9378F3 0%, #5A4AD2 100%)',
-        },
+        'primary-gradient': 'linear-gradient(to right, #9378F3 0%, #5A4AD2 100%)',
       },
       colors: {
         primary: {
@@ -15,6 +13,15 @@ export default {
           border: '#525C88',
           text: '#9378F3',
         },
+        secondary: {
+          background: '#383E5E',
+        },
+        dark: {
+          background: '#1F2336',
+        },
+      },
+      dropShadow: {
+        button: '0 4px 4px rgba(0, 0, 0, 0.25)',
       },
       fontFamily: {
         Poppins: 'Poppins',
