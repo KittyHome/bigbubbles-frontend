@@ -1,18 +1,19 @@
 import './index.css';
 
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 
 import App from './App';
 
-import './utils/noise.min';
-import './utils/util';
-import './utils/swirl';
+const rootElement = document.getElementById('root');
+if (rootElement) {
+  const root = ReactDOM.createRoot(rootElement);
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-    <div className="content--canvas"></div>
-  </React.StrictMode>,
-  document.getElementById('root'),
-);
+  root.render(
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>,
+  );
+} else {
+  console.error('Root element not found');
+}

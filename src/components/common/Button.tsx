@@ -1,5 +1,5 @@
-import { PropsWithChildren } from 'react';
 import clsx from 'clsx';
+import { PropsWithChildren } from 'react';
 
 type Variant = 'contained' | 'outline' | 'text';
 type Color = 'primary' | 'secondary';

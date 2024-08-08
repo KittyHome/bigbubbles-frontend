@@ -26,7 +26,7 @@ const Input: React.FC<InputProps> = ({
         type={type}
         name={name}
         placeholder={placeholder}
-        className="rounded-xl border-1 border-primary-border bg-primary-background px-4 py-2.5 text-white outline-none placeholder:text-primary-placeholder"
+        className="rounded-xl border-1 border-primary-border/30 bg-primary-background/50 px-4 py-2.5 text-white outline-none placeholder:text-primary-placeholder"
       />
     </div>
   );
