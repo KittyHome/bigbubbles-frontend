@@ -1,9 +1,7 @@
 import { Link } from 'react-router-dom';
 
-import Input from '../../components/common/Input';
 import Button from '../../components/common/Button';
-
-import GoogleIcon from '../../assets/icons/google.png';
+import Input from '../../components/common/Input';
 
 const Signin: React.FC = () => {
   return (
@@ -24,7 +22,7 @@ const Signin: React.FC = () => {
             label="Password"
             type="password"
             name="password"
-            placeholder="Characters"
+            placeholder="Type your password"
             className="mb-2.5"
           />
           <Link
@@ -35,15 +33,17 @@ const Signin: React.FC = () => {
           </Link>
         </div>
         <div className="flex w-full flex-col gap-y-4">
-          <Button variant="contained">Sign In</Button>
+          <Button variant="contained">Continue with Email</Button>
           <div className="flex items-center gap-x-2">
             <div className="h-0.5 grow border-1 border-primary-border"></div>
             <span className="text-white">Or</span>
             <div className="h-0.5 grow border-1 border-primary-border"></div>
           </div>
           <Button variant="contained" color="secondary">
-            <img src={GoogleIcon} />
-            Sign in with Google
+            <img src="/icons/google.png" alt="Google Logo" />
+            <span>
+              Continue with <b>Google</b>
+            </span>
           </Button>
           <Link
             to={''}
