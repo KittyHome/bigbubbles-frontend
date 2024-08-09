@@ -8,12 +8,14 @@ interface ButtonProps extends PropsWithChildren {
   variant?: Variant;
   className?: string;
   color?: Color;
+  onClick?: () => void;
 }
 
 const Button: React.FC<ButtonProps> = ({
   variant = 'text',
   className = '',
   color = 'primary',
+  onClick = () => {},
   children,
 }) => {
   const commonClasses =
@@ -26,7 +28,7 @@ const Button: React.FC<ButtonProps> = ({
       ? 'bg-secondary-background hover:opacity-90 active:opacity-70'
       : '';
   return (
-    <button className={clsx(commonClasses, colorClasses, variantClasses, className)}>
+    <button className={clsx(commonClasses, colorClasses, variantClasses, className)} onClick={onClick}>
       {children}
     </button>
   );
