@@ -38,6 +38,7 @@ const PatternPicker = () => {
       <div className="grid w-full grid-cols-3 gap-0.5 rounded-xl  bg-dark-light p-3.5">
         {patterns.map((pattern, index) => (
           <div
+            key={index}
             className="relative flex items-center justify-center"
             onClick={handlePatternClick(index)}
           >

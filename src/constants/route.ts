@@ -4,3 +4,12 @@ export enum AuthRoutes {
   ONBOARD = 'on-board',
   GETSTARTED = 'get-started',
 }
+
+export enum HomeRoutes {
+  ROOT = 'home',
+}
+
+export enum GameRoutes {
+  ROOT = 'game',
+  FREE = 'free',
+}
