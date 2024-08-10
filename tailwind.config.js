@@ -13,6 +13,7 @@ export default {
           border: '#525C88',
           text: '#9378F3',
           avatar: '#FEC578',
+          badge: '#61CAFF',
         },
         secondary: {
           background: '#383E5E',
