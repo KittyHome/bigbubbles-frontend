@@ -1,3 +1,6 @@
+import { useState } from 'react';
+import { FaCheck } from 'react-icons/fa';
+
 import { Classname } from '@/constants/classname';
 
 const colors = [
@@ -13,6 +16,12 @@ const colors = [
 ];
 
 const ColorPicker = () => {
+  const [colorIndex, setColorIndex] = useState<number>(0);
+
+  const handleColorClick = (index: number) => () => {
+    setColorIndex(index);
+  };
+
   return (
     <div className="flex flex-col items-center gap-y-1">
       <p className={Classname.Paragraph}>Color</p>
@@ -21,8 +30,15 @@ const ColorPicker = () => {
           <div
             key={index}
             style={{ backgroundColor: color }}
-            className="aspect-square rounded-md"
-          ></div>
+            className="flex aspect-square items-center justify-center rounded-md"
+            onClick={handleColorClick(index)}
+          >
+            {colorIndex === index && (
+              <span className="flex h-4 w-4 items-center justify-center rounded-full bg-primary-badge text-white">
+                <FaCheck size={12} />
+              </span>
+            )}
+          </div>
         ))}
       </div>
     </div>

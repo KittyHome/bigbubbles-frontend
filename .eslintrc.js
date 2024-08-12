@@ -1,5 +1,6 @@
 module.exports = {
   root: true,
+  printWidth: 120,
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 2020,
