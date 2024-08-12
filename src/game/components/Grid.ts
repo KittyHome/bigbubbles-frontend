@@ -1,7 +1,17 @@
-import { Scene, GameObjects } from "phaser";
+import { Scene, GameObjects } from 'phaser';
 
 const LIMIT_LINE_COLOR = 0xff0000;
-const NORMAL_LINE_COLOR = 0x000000;
+const NORMAL_LINE_COLOR = 0x3b4260;
+
+const getHLabel = (index: number) => {
+  const mode = ((index % 26) + 26) % 26;
+  return String.fromCharCode(mode + 65);
+};
+
+const getVLabel = (index: number) => {
+  const labelIndex = ((index % 100) + 100) % 100;
+  return labelIndex.toString().padStart(2, '0');
+};
 
 export class Grid {
   private scene: Scene;
@@ -36,10 +46,8 @@ export class Grid {
     this.gridLabels = [];
 
     // Calculate the starting positions for the grid lines
-    const startX =
-      Math.floor(camera.worldView.x / this.gridSize) * this.gridSize;
-    const startY =
-      Math.floor(camera.worldView.y / this.gridSize) * this.gridSize;
+    const startX = Math.floor(camera.worldView.x / this.gridSize) * this.gridSize;
+    const startY = Math.floor(camera.worldView.y / this.gridSize) * this.gridSize;
 
     // Draw vertical lines and labels
     for (let x = startX; x < camera.worldView.x + width; x += this.gridSize) {
@@ -48,8 +56,7 @@ export class Grid {
         labelIndex === 0 || labelIndex === this.limitX
           ? LIMIT_LINE_COLOR
           : NORMAL_LINE_COLOR;
-      const strokeWidth =
-        labelIndex === 0 || labelIndex === this.limitX ? 1 : 0.2;
+      const strokeWidth = labelIndex === 0 || labelIndex === this.limitX ? 1 : 3;
       const line = this.scene.add.line(
         0,
         0,
@@ -67,8 +74,10 @@ export class Grid {
       const label = this.scene.add.text(
         x + 5,
         camera.worldView.y + 5,
-        `V${labelIndex}`,
-        { color: "#000" },
+        getHLabel(labelIndex),
+        {
+          color: '#FFFFFF',
+        },
       );
 
       label.setOrigin(0, 0);
@@ -82,8 +91,7 @@ export class Grid {
         labelIndex === 0 || labelIndex === this.limitY
           ? LIMIT_LINE_COLOR
           : NORMAL_LINE_COLOR;
-      const strokeWidth =
-        labelIndex === 0 || labelIndex === this.limitY ? 1 : 0.2;
+      const strokeWidth = labelIndex === 0 || labelIndex === this.limitY ? 1 : 3;
       const line = this.scene.add.line(
         0,
         0,
@@ -101,8 +109,10 @@ export class Grid {
       const label = this.scene.add.text(
         camera.worldView.x + 5,
         y + 5,
-        `H${labelIndex}`,
-        { color: "#000" },
+        getVLabel(labelIndex),
+        {
+          color: '#FFFFFF',
+        },
       );
 
       label.setOrigin(0, 0);

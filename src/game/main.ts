@@ -1,8 +1,8 @@
-import { AUTO, Game } from "phaser";
+import { AUTO, Game } from 'phaser';
 
-import { Boot } from "./scenes/Boot";
-import { Preloader } from "./scenes/Preloader";
-import { Playground } from "./scenes/Playground";
+import { Boot } from './scenes/Boot';
+import { Preloader } from './scenes/Preloader';
+import { Playground } from './scenes/Playground';
 
 //  Find out more information about the Game Config at:
 //  https://newdocs.phaser.io/docs/3.70.0/Phaser.Types.Core.GameConfig
@@ -13,8 +13,8 @@ const config: Phaser.Types.Core.GameConfig = {
   scale: {
     mode: Phaser.Scale.NONE,
   },
-  parent: "game-container",
-  backgroundColor: "#ffffff",
+  parent: 'game-container',
+  backgroundColor: '#1F2336',
   scene: [Boot, Preloader, Playground],
 };
 
@@ -28,7 +28,7 @@ const StartGame = (parent: string) => {
     height: game_container_dom?.clientHeight,
   });
 
-  window.addEventListener("resize", () => {
+  window.addEventListener('resize', () => {
     const game_container_dom = document.getElementById(parent);
 
     game.scale.resize(
